@@ -1,6 +1,33 @@
-Flurry iPhone SDK v3.0.9
-Build: 78
-Released: 3/9/12
+Flurry SDK v4.0.4
+Released: 9/17/12
+
+Release notes for v4.0.4:
+------------------------------------------------
+Removes Debug symbols that cause warnings during compilation
+
+Release notes for v4.0.3:
+------------------------------------------------
+- Built from Xcode 4.5 and includes support for iPhone 5 and armv7s
+- Strips symbols to avoid conflict with other JSON libraries
+- Disables context menu in ad
+- Disables scrolling for banners
+- Updates to Custom Network Framework
+- Adds support for iAd takeovers
+- Update to support Millennial 4.6
+
+Release notes for v4.0.2:
+------------------------------------------------
+- Updates reachability status changed notification to be namespaced to avoid collisions
+- Improvements to resolve memory leaks
+
+Release notes for v4.0.1:
+------------------------------------------------
+- Improves responsiveness when user closes an ad
+- Fixes issue of ads not appearing intermittently on iOS 4.3
+- Add reachability methods to determine network availability before showing pre-cached
+ads
+- Adds fix to prevent decoding issues in transmission of user cookies
+- Removes extraneous file that referenced CoreLocation framework
 
 Release notes for v3.0.9:
 ------------------------------------------------
@@ -155,7 +182,7 @@ Release notes for v2.8.3:
 Release notes for v2.8.2:
 ------------------------------------------------
 - Change multiple method signatures to standardize SDK methods in different platforms
-- Remove libFlurryWithLocation and replaced with a generalized setLocation() function 
+- Remove libFlurryWithLocation and replaced with a generalized setLocation() function
 
 Release notes for v2.8.1:
 ------------------------------------------------
@@ -183,13 +210,13 @@ Release notes for v2.6:
 ------------------------------------------------
 - Improve memory usage in pause/resume cycle
 - Pausing the app will not send sessions by default
-- Fix AppCircle image parse error 
+- Fix AppCircle image parse error
 - Close AppCircle canvas on pause
 
 Release notes for v2.5:
 ------------------------------------------------
-- Send sessions data when paused. 
-- May create a new session depending on length of pause or will continue the current session on resume. 
+- Send sessions data when paused.
+- May create a new session depending on length of pause or will continue the current session on resume.
 
 Release notes for v2.4:
 ------------------------------------------------
@@ -222,7 +249,7 @@ Release notes for v2.0b18:
 
 Release notes for v1.4:
 ------------------------------------------------
-- Added the ability to detect jailbroken devices which will be shown as a metric soon. 
+- Added the ability to detect jailbroken devices which will be shown as a metric soon.
 - Add automatic detection of the AppStore Id of the application to make categorization easier.
 
 Release notes for v1.3:
@@ -231,9 +258,9 @@ Release notes for v1.3:
 
 Release notes for v1.2:
 ------------------------------------------------
-- Added the option to enable session reports to be sent at the end of a user session. This will 
-  increase the speed at which event data, error logging and session length metrics are updated as it 
-  does not require waiting until the next session to report. 
+- Added the option to enable session reports to be sent at the end of a user session. This will
+  increase the speed at which event data, error logging and session length metrics are updated as it
+  does not require waiting until the next session to report.
 
 Release notes for v1.1:
 ------------------------------------------------
