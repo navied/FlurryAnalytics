@@ -1,5 +1,46 @@
-Flurry SDK v4.0.4
-Released: 9/17/12
+Flurry SDK v4.0.5
+Released: 10/03/12
+
+Release notes for v4.0.5:
+------------------------------------------------
+Adds the following methods to fetch, check and display ads. These allow for finer control of ad display:
+
+1. -(void)fetchAdForSpace:(NSString*)space frame:(CGRect)frame size:(FlurryAdSize)size;
+2. -(BOOL)adReadyForSpace:(NSString*)space;
+3. -(void)displayAdForSpace:(NSString*)space onView:(UIView *)view;
+4. -(void)fetchAndDisplayAdForSpace:(NSString*)space view:(UIView *)viewContainer size:(FlurryAdSize)size;
+
+Deprecates following methods to show ads and check availability in favor of the above:
+
+1. -(BOOL)isAdAvailableForSpace:(NSString*)space view:(UIView *)view size:(FlurryAdSize)size timeout:(int64_t)timeout;
+2. -(BOOL)showAdForSpace:(NSString*)space view:(UIView *)viewContainer size:(FlurryAdSize)size timeout:(int64_t)timeout;
+
+Introduces new and updated delegates in FlurryAdDelegate.h
+
+1. -(void)spaceDidReceiveAd:(NSString*)adSpace;
+2. -(void)spaceDidFailToReceiveAd:(NSString*)adSpace error:(NSError *)error;
+3. -(BOOL)spaceShouldDisplay:(NSString*)adSpace interstitial:(BOOL)interstitial;
+4. -(void)spaceDidFailToRender:(NSString *)space error:(NSError *)error;
+5. -(void)spaceWillDismiss:(NSString *)adSpace interstitial:(BOOL)interstitial;
+6. -(void)spaceDidDismiss:(NSString *)adSpace interstitial:(BOOL)interstitial;
+
+Adds new method in FlurryAds to register a custom network
+
+1. (void) addCustomAdNetwork:(Class<FlurryCustomAdNetwork>)adNetworkClass withProperties:(id<FlurryCustomAdNetworkProperties>)adNetworkProperties;
+
+Updates support for ad networks to the following versions:
+
+1. inMobi 3.6.0
+2. Mobclix 600
+3. Millennial 4.6.1
+
+Other changes
+
+1. Fixes issue where network calls at the end of a session could cause app to terminate instead of backgrounding
+2. Fixes issue where the loss of connection in the middle of ad serving could block the main thread.
+3. Updates all ad units to support larger display of iPhone5
+4. Updates metric collection to better represent fill rate for mediatation
+5. Updates Custom ad network framework to make it easier to integrate ad networks that are not supported natively. The new files are included in the Mediation folder of the SDK download.
 
 Release notes for v4.0.4:
 ------------------------------------------------
